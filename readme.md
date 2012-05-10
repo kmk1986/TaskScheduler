@@ -25,7 +25,7 @@ new TaskScheduler("test task").run(function(){
 
 This doesn't do anything until you call the one of the following methods (before, on, after)
 
-## .before with native javascript Date object
+## .before
 
 ```javascript
 new TaskScheduler("test task").run(function(){
