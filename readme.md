@@ -23,7 +23,31 @@ new TaskScheduler("test task").run(function(){
 });
 ```
 
-This doesn't do anything until you call the one of the following methods (before, on, after)
+You can also speicify how many times your task should run. The default value is 1.
+
+```javascript
+new TaskScheduler("test task").run(function(index){
+	
+	console.log(index); // output: 1,2,3,4,5,6,7,8,9,10 
+
+},10);
+```
+
+You can also add multiple callbacks.
+
+```javascript
+
+function callback1(){}
+function callback2(){}
+function callback3(){}
+
+new TaskScheduler("test task").run( callback1 )
+                              .run( callback2 )
+                              .run( callback3 );
+
+```
+
+This doesn't do anything until you call one of the following methods (before, on, after)
 
 ## .before
 
@@ -70,5 +94,9 @@ new TaskScheduler("test task").run(function(){
 ```
 
 The callback runs after 5/26/2012
+
+
+
+
 
 
