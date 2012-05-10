@@ -2,6 +2,12 @@
 
 This is beta version.
 
+Tested on 
+
+Chrome 18+
+Safari 5.1+
+IE 6+
+
 
 ## Usage
 
