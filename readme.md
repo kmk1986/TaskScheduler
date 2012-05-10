@@ -15,6 +15,7 @@ Creates an instance of TaskScheduler object.
 
 ## .run( callback )
 
+```html
 new TaskScheduler("test task").run(function(){
 	
 	// do something;
