@@ -21,6 +21,7 @@ new TaskScheduler("test task").run(function(){
 	// do something;
 
 });
+```
 
 This doesn't do anything until you call the one of the following methods (before, on, after)
 
