@@ -4,9 +4,9 @@ This is beta version.
 
 Tested on 
 
-Chrome 18+\n
-Safari 5.1+\n
-IE 6+\n
+Chrome 18+, 
+Safari 5.1+, 
+IE 6+, 
 
 
 ## Usage
