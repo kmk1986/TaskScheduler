@@ -1,5 +1,7 @@
 #  TaskScheduler.js – Run a task on, before, after a date
 
+This is beta version.
+
 
 ## Usage
 
