@@ -64,7 +64,7 @@ new TaskScheduler("test task").run(function(){
 	
 	// do something
 
-}).before( new TaskDateAdapter.String("5/26/2012") );
+}).before( TaskDateAdapter.String("5/26/2012") );
 ```
 
 The callback runs until end of 5/25/2012
@@ -77,7 +77,7 @@ new TaskScheduler("test task").run(function(){
 	
 	// do something
 
-}).on( new TaskDateAdapter.String("5/26/2012") );
+}).on( TaskDateAdapter.String("5/26/2012") );
 ```
 
 The callback runs on 5/26/2012 (all day)
@@ -87,7 +87,7 @@ new TaskScheduler("test task").run(function(){
 	
 	// do something
 
-}).on( new TaskDateAdapter.String("5/26/2012 6:00pm") );
+}).on( TaskDateAdapter.String("5/26/2012 6:00pm") );
 ```
 The callback runs 5/26/2012 6pm exactly
 
@@ -98,13 +98,26 @@ new TaskScheduler("test task").run(function(){
 	
 	// do something
 
-}).after( new TaskDateAdapter.String("5/26/2012") );
+}).after( TaskDateAdapter.String("5/26/2012") );
 ```
 
 The callback runs after 5/26/2012
 
 
+## Don't want to change your system date for testing?
 
+TaskScheduler use current user's system date by default. You can override it by calling setCurrentDate() for testing purpose.
 
+```javascript
+var Task = new TaskScheduler("test task");
+
+Task.setCurrentDefaultDate( TaskDateAdapter.String("5/26/2012") );
+
+Task.run(function(){
+	
+	// do something;
+
+}).on( TaskDateAdapter.String("5/26/2012")  );
+```
 
 
