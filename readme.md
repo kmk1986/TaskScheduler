@@ -106,7 +106,7 @@ The callback runs after 5/26/2012
 
 ## Don't want to change your system date for testing?
 
-TaskScheduler use current user's system date by default. You can override it by calling setCurrentDate() for testing purpose.
+TaskScheduler uses current user's system date by default. You can override it by calling setCurrentDate() for testing purpose.
 
 ```javascript
 var Task = new TaskScheduler("test task");
