@@ -3,17 +3,14 @@ describe("Task with String Adapater", function(){
 	var TestTask;
 	var TempVar;
 
-	// override getCurrentDate method to inject our own date for testing
-	TaskSchedulerUtil.getCurrentDate = function()
-	{
-		// may 25 2012
-		return new Date(2012, 4, 25, 18, 0, 0, 0);
-	}
-	
+
+
 
 	beforeEach(function(){
 
 		TestTask = new TaskScheduler("test");
+		TestTask.setCurrentDate( new Date(2012, 4, 25, 18, 0, 0, 0) );
+		
 		TempVar = 0;
 
 

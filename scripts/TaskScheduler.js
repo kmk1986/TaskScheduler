@@ -9,6 +9,7 @@
 	window.TaskScheduler = function( title )
 	{
 		this.title = title;
+		this.currentDate = null;
 
 		this.callbacks = [];
 
@@ -23,17 +24,28 @@
 		getMonthDateYear: function( dateObj )
 		{
 			return dateObj.getMonth() + 1 + "/" + dateObj.getDate() + "/" + dateObj.getFullYear();
-		},
-
-		getCurrentDate: function()
-		{
-			return new Date();
 		}	
 
 	}
 
 	TaskScheduler.prototype = {
 
+		setCurrentDate: function( JSDate )
+		{
+			if( JSDate instanceof Date)
+			{
+				this.currentDate = JSDate;
+			}
+			else
+			{
+				throw(JSDate + "is not an instance of Date object");
+			}
+		},
+
+		getCurrentDate: function()
+		{
+			return new Date();
+		},
 
 		runTask: function( callbackArray )
 		{
@@ -81,7 +93,15 @@
 		after: function( targetDate )
 		{
 
-			var currentDate = TaskSchedulerUtil.getCurrentDate();
+			var currentDate;
+			if( this.currentDate == null )
+			{
+				currentDate = this.getCurrentDate();
+			}
+			else
+			{
+				currentDate = this.currentDate;
+			}
 
 
 			if( currentDate > targetDate )
@@ -94,8 +114,15 @@
 		before: function( targetDate )
 		{
 
-			var currentDate = TaskSchedulerUtil.getCurrentDate();
-			
+			var currentDate;
+			if( this.currentDate == null )
+			{
+				currentDate = this.getCurrentDate();
+			}
+			else
+			{
+				currentDate = this.currentDate;
+			}			
 
 			if( currentDate < targetDate )
 			{
@@ -110,8 +137,16 @@
 			if( checkTime == undefined ) checkTime = false;
 
 
-			var currentDate = TaskSchedulerUtil.getCurrentDate();
-			
+			var currentDate;
+			if( this.currentDate == null )
+			{
+				currentDate = this.getCurrentDate();
+			}
+			else
+			{
+				currentDate = this.currentDate;
+			}
+
 
 			if( checkTime )
 			{
