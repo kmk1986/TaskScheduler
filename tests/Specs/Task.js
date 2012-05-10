@@ -25,7 +25,7 @@ describe("Task with String Adapater", function(){
 		it("should run the defined task; setting the date 5/26/2012", function(){
 
 
-			TestTask.do(function( index ){
+			TestTask.run(function( index ){
 
 				TempVar = index;
 
@@ -37,7 +37,7 @@ describe("Task with String Adapater", function(){
 
 		it("should not run the defined task; setting the date 5/25/2012", function(){
 
-			TestTask.do(function( index ){
+			TestTask.run(function( index ){
 
 				TempVar = index;
 
@@ -49,7 +49,7 @@ describe("Task with String Adapater", function(){
 
 		it("should run the defined task; setting the date 5/25/2012 6:1pm ", function(){
 
-			TestTask.do(function( index ){
+			TestTask.run(function( index ){
 
 				TempVar = index;
 
@@ -69,7 +69,7 @@ describe("Task with String Adapater", function(){
 
 		it("Run a task after 5/25/2012 5:59pm", function(){
 
-			TestTask.do(function(index){
+			TestTask.run(function(index){
 
 				TempVar = index;
 
@@ -81,7 +81,7 @@ describe("Task with String Adapater", function(){
 
 		it("should not run the defined task; setting the date 5/26/2012", function(){
 
-			TestTask.do(function(index){
+			TestTask.run(function(index){
 
 				TempVar = index;
 
@@ -103,7 +103,7 @@ describe("Task with String Adapater", function(){
 		it("Run a task once on 5/25/2012; it should run only once;", function(){
 
 
-			TestTask.do(function( index ){
+			TestTask.run(function( index ){
 
 				TempVar = index;
 
@@ -116,7 +116,7 @@ describe("Task with String Adapater", function(){
 
 		it("Run a task once on 5/25/2012 6:00 pm; it should run only once", function(){
 
-			TestTask.do(function(index){
+			TestTask.run(function(index){
 
 				TempVar = index
 
@@ -129,7 +129,7 @@ describe("Task with String Adapater", function(){
 
 		it("Run a task once on 5/25/2012 6:00 pm; it should not run; TemVar should be 0", function(){
 
-			TestTask.do(function(index){
+			TestTask.run(function(index){
 
 				TempVar = index
 
@@ -142,7 +142,7 @@ describe("Task with String Adapater", function(){
 
 		it("Run a test 3 times on 5/25/2012; TempVar should be 6 (1+2+3)", function(){
 
-			TestTask.do(function(index){
+			TestTask.run(function(index){
 
 				TempVar += index;
 

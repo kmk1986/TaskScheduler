@@ -64,7 +64,7 @@
 
 		},
 
-		do: function( callback, repeat )
+		run: function( callback, repeat )
 		{
 			if( typeof callback === "function" )
 			{
