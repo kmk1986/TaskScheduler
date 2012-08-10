@@ -89,6 +89,34 @@
 			return this;
 		},
 
+		between: function( fromDate, toDate )
+		{
+
+
+			var currentDate;
+			if( this.currentDate == null )
+			{
+				currentDate = this.getCurrentDate();
+			}
+			else
+			{
+				currentDate = this.currentDate;
+			}
+
+			currentDate = currentDate.getTime();
+
+
+			fromDate = fromDate.getTime();
+			toDate = toDate.getTime();
+
+
+			if( currentDate >= fromDate && currentDate <= toDate)
+			{
+				this.runTasks();
+			}
+
+
+		},
 
 		after: function( targetDate )
 		{

@@ -16,6 +16,7 @@ describe("Task with String Adapater", function(){
 
 	});
 
+
 	describe("Testing 'before' ", function(){
 
 
@@ -89,6 +90,36 @@ describe("Task with String Adapater", function(){
 		});
 
 
+
+
+	});
+
+	describe("Testing 'before' method", function(){
+
+		it("Run a task between 5/25/2012 6:00 pm and 6/25/2012", function(){
+
+			TestTask.run(function(index){
+
+				TempVar = index;
+
+			}).between( new TaskDateAdapter.String("5/25/2012 6:00pm"), new  TaskDateAdapter.String("6/25/2012") );
+
+			expect( TempVar ).toEqual( 1 );
+
+		});
+
+		it("Should not run a task between 5:25/2012 6:01pm and 6/25/2012", function(){
+
+			TestTask.run(function(index){
+
+				TempVar = index;
+
+			}).between( new TaskDateAdapter.String("5/25/2012 6:01pm"), new  TaskDateAdapter.String("6/25/2012") );
+
+			expect( TempVar ).toEqual( 0 );
+
+
+		})
 
 
 	});
