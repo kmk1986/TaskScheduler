@@ -2,9 +2,17 @@
 
 	"use strict";
 
+	var isNode = false;
+
+	if( typeof module != 'undefined' && module.exports )
+	{
+		isNode = true;
+		var window = {}
+	}
+
+
 	window.TaskDateAdapter = {}
 
-	TaskDateAdapter = {}
 
 	window.TaskScheduler = function( title )
 	{
@@ -28,7 +36,7 @@
 
 	}
 
-	TaskScheduler.prototype = {
+	window.TaskScheduler.prototype = {
 
 		setCurrentDate: function( JSDate )
 		{
@@ -63,12 +71,12 @@
 
 			var i;
 
+
 			for( i in this.callbacks )
 			{
 				if( this.callbacks.hasOwnProperty(i) )
 				{
 					// this.callbacks[i]();
-
 					this.runTask( this.callbacks[i] );
 
 				}
@@ -92,6 +100,7 @@
 		between: function( fromDate, toDate )
 		{
 
+			
 
 			var currentDate;
 			if( this.currentDate == null )
@@ -102,6 +111,7 @@
 			{
 				currentDate = this.currentDate;
 			}
+
 
 			currentDate = currentDate.getTime();
 
@@ -202,6 +212,11 @@
 
 		}
 
+	}
+
+	if( isNode )
+	{
+		module.exports = window.TaskScheduler;
 	}
 
 

@@ -8,6 +8,16 @@
 *	noon = 12 pm
 *	FYI :)
 **/
+
+var isNode = false;
+
+if( typeof module != 'undefined' && module.exports )
+{
+	isNode = true;
+	var TaskDateAdapter = {}
+}
+
+
 TaskDateAdapter.String = function( mdyyyy )
 {
 
@@ -115,4 +125,9 @@ TaskDateAdapter.String = function( mdyyyy )
 		0
 	);	
 
+}
+
+if( isNode )
+{
+	module.exports = TaskDateAdapter.String;
 }
