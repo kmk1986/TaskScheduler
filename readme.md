@@ -76,7 +76,7 @@ new TaskScheduler("test task").run( callback1 )
 
 ```
 
-This doesn't do anything until you call one of the following methods (before, on, after)
+This doesn't do anything until you call one of the following methods (before, between, on, after)
 
 ## .before
 
