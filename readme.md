@@ -8,12 +8,34 @@ IE 6+,
 Node Env.
 
 
-## Usage
+## Usage for browsers
 
 Download [TaskScheduler.min.js](https://raw.github.com/kmk1986/TaskScheduler/master/scripts/TaskScheduler.min.js) and include it in your HTML document:
 
 ```html
 <script src="TaskScheduler.min.js"></script>
+```
+
+## Usage for node (node-example.js)
+
+```javascript
+
+var Task = require("./scripts/TaskScheduler");
+var StringAdapter = require("./scripts/Adapters/String");
+
+
+var testTask = new Task;
+
+// for the testing purpose, force the current date of this object to 5/25/2012 6:00pm
+testTask.setCurrentDate( new Date(2012, 4, 25, 18, 0, 0, 0) );
+
+
+// outputs 1 if current date is in between 5/25/2012 5:00 pm and 6/25/2012
+testTask.run(function(index){
+
+	console.log(index);
+
+}).between( StringAdapter("5/25/2012 5:00pm"), StringAdapter("6/25/2012") );
 ```
 
 ## new TaskScheduler("name of your task")
@@ -68,6 +90,17 @@ new TaskScheduler("test task").run(function(){
 
 The callback runs until end of 5/25/2012
 
+## .between
+
+```javascript
+
+new TaskScheduler("test task").run(function(){
+	
+	// do something
+
+}).between( TaskDateAdapter.String("5/26/2012"), TaskDateAdapter.String("5/29/2012") );
+
+```
 
 ## .on
 
@@ -118,5 +151,4 @@ Task.run(function(){
 
 }).on( TaskDateAdapter.String("5/26/2012")  );
 ```
-
 
